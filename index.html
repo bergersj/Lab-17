@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Lab 17</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Mr+Dafoe" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+</head>
+
+<body ng-app="myMod" ng-controller="controller">
+    <div class="header">
+        <h1>Lab 17</h1>
+        <h4>Angular Reddit Feed</h4>
+        <!-- <input type="text" ng-mode="search" placeholder="search"> -->
+    </div>
+
+    <div class="view">
+        <ng-view>
+            <span ng-repeat="post in posts | filter:search">
+                  <a href={{post.data.url}} class="post">
+                    <h3>Title: {{post.data.title}}</h3>
+                    <h5>Author: {{post.data.author}}</h5>
+                    <img src={{post.data.thumbnail}}>
+                  </a>
+            </span>
+        </ng-view>
+    </div>
+
+    <!-- <script src="jquery-3.1.1.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <script src="module.js"></script>
+    <script src="controller.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+</body>
+
+</html>
